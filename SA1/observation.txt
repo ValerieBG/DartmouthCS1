@@ -1,0 +1,2 @@
+mystery.py: I see many multicolored ovals that say "Welcome to CS1" randomly popping up,
+overlapping and filling the window at a fairly rapid pace
