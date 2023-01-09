@@ -14,7 +14,7 @@ def set_fill_white():
     set_fill_color(1, 1, 1, 1)
 
 def set_fill_yellow(): #for the beak
-    set_fill_color(251/255, 200/255, 58/255, 1)
+    set_fill_color(255/255, 87/255, 51/255, 1)
 
 def set_fill_orange():
     set_fill_color(244/255, 175/255, 107/255, 1)
@@ -52,6 +52,7 @@ def draw_speech_bubble():
     ellipse_xr = 150
     ellipse_yr = 180
 
+    # draw the body of the speech bubble
     draw_ellipse(ellipse_x, ellipse_y, ellipse_xr, ellipse_yr)
 
     # finish the speech bubble tail utilizing ellipse for scale
@@ -84,7 +85,15 @@ def draw_pigeon():
     head_y = body_y - neck_length
     head_r = 30
 
-    # draw legs
+    # draw left leg
+    draw_line(body_x-(body_r//3), body_y-(3*body_r//4), body_x-(body_r//3), body_y+(5*body_r//3))
+    draw_line(body_x-(body_r//3), body_y+(4*body_r//3), body_x-(body_r//2), body_y+(5*body_r//3))
+    draw_line(body_x-(body_r//3), body_y+(4*body_r//3), body_x-(body_r//2)+(3*body_r//8), body_y+(5*body_r//3))
+
+    # draw right left
+    draw_line(body_x + (body_r // 3), body_y - (3 * body_r // 4), body_x + (body_r // 3), body_y + (5 * body_r // 3))
+    draw_line(body_x + (body_r // 3), body_y + (4 * body_r // 3), body_x + (body_r // 2), body_y + (5 * body_r // 3))
+    draw_line(body_x + (body_r // 3), body_y + (4 * body_r // 3), body_x - (body_r // 2) + (5 * body_r // 8), body_y + (5 * body_r // 3))
 
     # draw the body
     set_fill_blue()
@@ -108,10 +117,16 @@ def draw_pigeon():
     set_fill_blue()
     draw_circle(body_x - body_r + (neck_width//2), body_y, neck_width//2)  # cover bottom edge to maintain bird border
 
+    # draw band on neck
+    set_stroke_black()
+    set_fill_white()
+    draw_rectangle(body_x-body_r, body_y-(neck_length//2), neck_width, (neck_length//5))
+
     # draw pigeon beak
     set_fill_orange()
     set_stroke_black()
-    # draw_triangle(head_x-head_r-(head_r//3), head_y, )
+    draw_triangle(head_x-head_r-(head_r//3), head_y, head_x-head_r, head_y, head_x-head_r+(head_r//3), head_y-(head_r//3))
+    draw_triangle(head_x-head_r-(head_r//6), head_y, head_x-head_r, head_y, head_x-head_r+(head_r//3), head_y+(head_r//3))
 
     # draw pigeon head
     set_stroke_black()
@@ -123,10 +138,18 @@ def draw_pigeon():
     set_stroke_black()
     draw_circle(head_x, head_y, head_r//2)  # the white of the eye
     set_fill_black()
-    draw_circle(head_x+(head_r//4), head_y, head_r//4)  # the iris of the eye
+    draw_circle(head_x+(head_r//4), head_y, head_r//4)  # the pupil of the eye
+
+def write_name():
+    name = "Valerie Gadapati"
+    set_stroke_black() # set text color to black
+    set_font("PT Serif")
+    set_font_size(20)
+    draw_text(name, 30, 370)
 def draw_cover():
     set_background_orange()
     draw_speech_bubble()
     draw_pigeon()
+    write_name()
 
 start_graphics(draw_cover)
