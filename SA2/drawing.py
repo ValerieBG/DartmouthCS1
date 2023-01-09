@@ -1,4 +1,4 @@
-# filename: pigeonCover.py
+# filename: drawing.py
 # author:   Valerie Gadapati
 # date:     Jan 8, 2023
 # purpose:  to draw the cover of the children's book "Don't Let the Pigeon Drive the Bus!"
