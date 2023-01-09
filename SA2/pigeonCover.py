@@ -79,11 +79,12 @@ def draw_pigeon():
     head_r = 30
 
     # draw left leg
+    set_stroke_black()
     draw_line(body_x-(body_r//3), body_y-(3*body_r//4), body_x-(body_r//3), body_y+(5*body_r//3))
     draw_line(body_x-(body_r//3), body_y+(4*body_r//3), body_x-(body_r//2), body_y+(5*body_r//3))
     draw_line(body_x-(body_r//3), body_y+(4*body_r//3), body_x-(body_r//2)+(3*body_r//8), body_y+(5*body_r//3))
 
-    # draw right left
+    # draw right leg
     draw_line(body_x + (body_r // 3), body_y - (3 * body_r // 4), body_x + (body_r // 3), body_y + (5 * body_r // 3))
     draw_line(body_x + (body_r // 3), body_y + (4 * body_r // 3), body_x + (body_r // 2), body_y + (5 * body_r // 3))
     draw_line(body_x + (body_r // 3), body_y + (4 * body_r // 3), body_x - (body_r // 2) + (5 * body_r // 8), body_y + (5 * body_r // 3))
