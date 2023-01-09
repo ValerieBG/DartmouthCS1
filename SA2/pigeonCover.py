@@ -65,13 +65,6 @@ def draw_speech_bubble():
 
     draw_triangle(point_1_x, point_1_y, point_2_x, point_2_y, point_3_x, point_3_y)
 
-    # add formatted text to the speech bubble, if desired
-    title = ""  # "Don't Let the Pigeon Drive the Bus!"
-    set_stroke_color(0, 0, 0, 1)  # set text color to black
-    set_font("PT Serif")
-    set_font_size(40)
-    draw_text(title, 50, 50)
-
 def draw_pigeon():
     # set variables about the pigeon to reference in the drawing
     neck_length = 90
@@ -146,6 +139,7 @@ def write_name():
     set_font("PT Serif")
     set_font_size(20)
     draw_text(name, 30, 370)
+
 def draw_cover():
     set_background_orange()
     draw_speech_bubble()
