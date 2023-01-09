@@ -14,7 +14,7 @@ def set_fill_white():
     set_fill_color(1, 1, 1, 1)
 
 def set_fill_yellow(): #for the beak
-    set_fill_color(255/255, 87/255, 51/255, 1)
+    set_fill_color(255/255, 255/255, 51/255, 1)
 
 def set_fill_orange():
     set_fill_color(244/255, 175/255, 107/255, 1)
@@ -117,7 +117,7 @@ def draw_pigeon():
     draw_rectangle(body_x-body_r, body_y-(neck_length//2), neck_width, (neck_length//5))
 
     # draw pigeon beak
-    set_fill_orange()
+    set_fill_yellow()
     set_stroke_black()
     draw_triangle(head_x-head_r-(head_r//3), head_y, head_x-head_r, head_y, head_x-head_r+(head_r//3), head_y-(head_r//3))
     draw_triangle(head_x-head_r-(head_r//6), head_y, head_x-head_r, head_y, head_x-head_r+(head_r//3), head_y+(head_r//3))
