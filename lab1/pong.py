@@ -21,6 +21,9 @@ QUIT_KEY = 'q'
 
 PADDLE_INCREMENT = 5  # The amount that a paddle moves when it moves.
 
+BALL_RADIUS = 10
+BALL_INCREMENT = 5
+
 # start screen that tells the user to hit space to start the game
 def start_screen():
     global default, left_y, left_x, right_x, right_y  # global variable to make sure the canvas doesn't constantly loop and clear states
@@ -41,15 +44,16 @@ def start_screen():
 def playing_screen():
     # draw dotted divider line
     dash_y = 0
+    dash_width = 5
     while dash_y <= WINDOW_Y:
-        dash_x = WINDOW_X // 2
+        dash_x = WINDOW_X // 2 - dash_width//2
         set_stroke_color(1, 1, 1, 1)
         set_fill_color(1, 1, 1, 1)
-        draw_rectangle(dash_x, dash_y, 5, 10)
+        draw_rectangle(dash_x, dash_y, dash_width, 10)
         dash_y = dash_y + 20
 
 def keypress(key):
-    global playing, default, pressed_left_up, pressed_left_down, pressed_right_up, pressed_right_down
+    global playing, default, pressed_left_up, pressed_left_down, pressed_right_up, pressed_right_down, ball_x
 
     if key == LEFT_UP_KEY:
         pressed_left_up = True
@@ -102,6 +106,13 @@ def move_paddles():
         if pressed_right_down:
             right_y = right_y + PADDLE_INCREMENT
 
+
+def move_ball():
+    global ball_x, ball_y, BALL_INCREMENT
+    ball_x = ball_x + BALL_INCREMENT
+    if ball_x >= WINDOW_X or ball_x <= 0:
+        BALL_INCREMENT = -BALL_INCREMENT
+
 def graphics():
     global playing
     if default:
@@ -114,19 +125,24 @@ def graphics():
         draw_rectangle(right_x, right_y, PADDLE_X, PADDLE_Y)  # right paddle
         move_paddles()
 
+        draw_circle(ball_x, ball_y, BALL_RADIUS)
+        move_ball()
+
 # state variables
+playing = False
+default = True
+
 left_x = 0
 left_y = 0
 right_x = WINDOW_X - PADDLE_X
 right_y = WINDOW_Y - PADDLE_Y
-
-playing = False
-default = True
 
 pressed_left_up = False
 pressed_left_down = False
 pressed_right_up = False
 pressed_right_down = False
 
+ball_x = WINDOW_X//2
+ball_y = WINDOW_Y//2
 # utilize callback functions to check keyboard inputs for gameplay
 start_graphics(graphics, 2400, key_press=keypress, key_release=keyrelease)
