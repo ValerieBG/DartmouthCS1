@@ -1,0 +1,7 @@
+I plan on continuing the assignment by working on the ball movement. I already have a simple ball moving and bouncing
+off the walls at a straight line. I plan on pointing it at the top and bottom walls next by changing x and y increment
+components. Then I will use those components to get it to bounce at the correct inverse angle off a wall. I will print
+the component values and indicate when contact is made with print statements, along with overall x and y values. I also
+want to test it pointing to all 4 corners to make sure my math is right, and it bounces as intended. Then I will
+apply that same angle logic to the paddles based on if the ball enters any of their area. Then I will work on resetting
+the match if it hits a horizontal wall.
