@@ -1,0 +1,33 @@
+/opt/homebrew/opt/python3/bin/python3 /Users/valerie/PycharmProjects/23W_CS1/SA5/counterTest.py
+0004 False
+0003 False
+0002 False
+0001 False
+0000 False
+0009 True
+0008 False
+0007 False
+0006 False
+0005 False
+0004 False
+-------------
+Error: initial value outside countdown range
+04
+03
+02
+01
+00
+04
+03
+02
+01
+00
+04
+03
+02
+01
+00
+04
+current val as int:  3
+
+Process finished with exit code 0
