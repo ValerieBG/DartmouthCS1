@@ -5,9 +5,10 @@
 
 from counter import *
 
+
 class Timer:
 
-    # creates a timer whose initial values for its hours, minutes, and seconds are given by the parameters.
+    # creates a timer whose initial values of hours, minutes, and seconds are given by parameters
     def __init__(self, hours, minutes, seconds):
         self.hours = Counter(24, hours, 2)
         self.minutes = Counter(60, minutes, 2)
@@ -15,7 +16,7 @@ class Timer:
 
     # returns a string giving the timer's current time, in the format hh:mm:ss
     def __str__(self):
-        return str(self.hours) + ":" + str(self.minutes) + ":" + str(self.seconds)
+        return self.hours.__str__() + ":" + self.minutes.__str__() + ":" + self.seconds.__str__()
 
     # function to tick down the timer by one second
     def tick(self):
@@ -24,6 +25,5 @@ class Timer:
                 self.hours.tick()
 
     # function that returns a boolean that is True if the timer currently reads 00:00:00.
-    # could i use the wrapped boolean??
     def is_zero(self):
-        return self.hours == 0 and self.minutes == 0 and self.minutes == 0
+        return self.hours.get_value() == 0 and self.minutes.get_value() == 0 and self.seconds.get_value() == 0
