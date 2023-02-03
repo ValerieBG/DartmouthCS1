@@ -1,3 +1,8 @@
+# filename: deck.py
+# author:   Valerie Gadapati
+# date:     Feb 12, 2023
+# purpose:  to create and manipulate a standard deck of cards, using the card class
+
 from card import *
 from random import *
 
