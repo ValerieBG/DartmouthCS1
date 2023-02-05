@@ -8,21 +8,32 @@ from random import *
 
 class Deck:
     def __init__(self):
-        self.deck = [Card] * 52
+        self.card_list = [Card] * 52  # DONT NEED 52
 
     def add_standard_cards(self):
-        for i in Card.suits:
-            for j in Card.names:
-                card = Card(Card.names[j], Card.suits[i])
+        i = 0
+        while i <= len(Card.suits) - 1:
+            j = 0
+            while j <= len(Card.names) - 1:
+                card = Card(j, i)
                 position = (i * len(Card.names)) + j
-                self.deck[position] = card
+                self.card_list[position] = card
+                j = j + 1
+            i = i + 1
 
     def shuffle(self):
-        for i in self.deck:
+        i = 0
+        while i <= len(self.card_list) - 1:
             current_pos = i
-            new_pos = randint(0, len(self.deck))
-            temp = self.deck[current_pos]
-            self.deck[new_pos] = temp
+            new_pos = randint(0, len(self.card_list)-1)
+            temp = self.card_list[current_pos]
+            self.card_list[new_pos] = temp
+            i = i + 1
 
-    def deal(self):
-        return self.deck
+    def deal(self, hand_count):
+        hand = []
+        i = 0
+        while i <= hand_count:
+            hand[i] = (self.card_list.pop())
+            i = i + 1
+        return hand

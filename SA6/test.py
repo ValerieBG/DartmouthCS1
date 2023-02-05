@@ -3,7 +3,6 @@
 # date:     Feb 12, 2023
 # purpose:  driver code for the deck and card classes
 
-
 from deck import *
 
 card = Card(5, 1)
