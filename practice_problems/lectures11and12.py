@@ -32,19 +32,43 @@ print("--------------")
 
 # 3. Define a function that takes a list of integers glist that is sorted (in increasing order) and an integer n as
 # parameters and inserts n into glist in such a way that glist remains sorted.
-def func3(glist):
-    temp = 0
-    for i in glist:
-        if i < temp:
+def func3(glist, n):
+    i = 0
+    while i < len(glist):
+        if n > glist[i]:
+            glist.insert(i - 1, n)
+    i += 1
 
 # 4. Define a function that takes a list of integers glist as parameter and returns True if the list is either sorted
 # in decreasing or increasing order. Otherwise it returns False.
 # [Extra practice: If you used two loops, think how you can solve this problem with only one loop.]
-#
+
+# via chatgpt
+def func4(glist):
+    decreasing = True
+    increasing = True
+    for i in range(len(glist) - 1):
+        if glist[i] < glist[i + 1]:
+            decreasing = False
+        elif glist[i] > glist[i + 1]:
+            increasing = False
+    return decreasing or increasing
+
 # 5. Define a function that takes two lists glist1 and glist2 as parameters and returns True if they are the reverse
 # of each other, otherwise returns False. For simplicity you can assume that the given lists contain only integers.
-#
-#
+
+# via chatgpt
+
+def func5(glist1, glist2):
+    for i in range(len(glist1)):
+        if glist1[i] != glist2[-(i+1)]:
+            return False
+    return True
+
+l1 = [5, 4, 6, 2, 1]
+l2 = [1, 2, 6, 4, 5]
+print(func5(l1, l2))
+
 # 1. Define a function that takes a list of integers glist as a parameter and returns a list containing all the even
 # numbers in glist. Please note that the function should create a new list and not modify the given list glist.
 #

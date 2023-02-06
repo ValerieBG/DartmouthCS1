@@ -1,11 +1,12 @@
 # Variables, function definitions, and return statements:
 # Define a variable and assign it a value of 100.
-x = 100
+var = 100
 
 # Define a variable and assign it any integer value. In the second line define another variable and assign it the value
 # of the first variable.
-y = 100
-z = y
+var1 = 100
+var2 = var1
+
 # Define a variable and assign it any integer value. In the next line increment the value of the variable you defined
 # by 10.
 a = 85
