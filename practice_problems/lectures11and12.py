@@ -4,17 +4,39 @@
 # 20
 # 2
 # 12
-# 
+def func1(glist):
+    for i in glist:
+        if i%2 == 0:
+            print(i)
+
+list_a = [1, 4, 5, 20, 2, 12, 81]
+func1(list_a)
+print("--------------")
+
 # 2. Define a function that takes a list of integers glist as parameter and prints the numbers at even index.
 # For example if glist = [1, 4, 5, 20, 2, 12, 81]  then your program should print:
 # 1
 # 5
 # 2
 # 81
-#
+def func2(glist):
+    i = 0
+    while i < len(glist):
+        if i % 2 == 0:
+            print(glist[i])
+        i += 1
+
+list_b = [1, 4, 5, 20, 2, 12, 81]
+func2(list_b)
+print("--------------")
+
 # 3. Define a function that takes a list of integers glist that is sorted (in increasing order) and an integer n as
 # parameters and inserts n into glist in such a way that glist remains sorted.
-#
+def func3(glist):
+    temp = 0
+    for i in glist:
+        if i < temp:
+
 # 4. Define a function that takes a list of integers glist as parameter and returns True if the list is either sorted
 # in decreasing or increasing order. Otherwise it returns False.
 # [Extra practice: If you used two loops, think how you can solve this problem with only one loop.]
