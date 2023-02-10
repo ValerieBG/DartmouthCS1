@@ -4,6 +4,8 @@
 # purpose:  XX
 
 from cs1lib import *
+
+
 class Body:
     def __init__(self, mass, x, y, vx, vy, pixel_radius, r, g, b):
         self.mass = mass
@@ -15,6 +17,7 @@ class Body:
         self.r = r
         self.g = g
         self.b = b
+
     def update_position(self, timestep):
         self.x = self.x + self.vx * timestep
         self.y = self.y + self.vy * timestep
@@ -24,7 +27,6 @@ class Body:
         self.vy = self.vy + ay * timestep
 
     def draw(self, cx, cy, pixels_per_meter):
-        disable_stroke()
         set_fill_color(self.r, self.g, self.b)
         draw_circle(cx * pixels_per_meter, cy * pixels_per_meter, self.pixel_radius)
 
