@@ -5,7 +5,6 @@
 
 from counter import *
 
-
 class Timer:
 
     # creates a timer whose initial values of hours, minutes, and seconds are given by parameters
