@@ -4,8 +4,6 @@
 # purpose:  XX
 from math import sqrt
 
-from body import *
-
 GRAVITY = 6.67384e-11
 
 

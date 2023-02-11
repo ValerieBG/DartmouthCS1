@@ -28,6 +28,6 @@ class Body:
 
     def draw(self, cx, cy, pixels_per_meter):
         set_fill_color(self.r, self.g, self.b)
-        draw_circle(cx * pixels_per_meter, cy * pixels_per_meter, self.pixel_radius)
+        draw_circle(self.x * pixels_per_meter + cx, self.y * pixels_per_meter + cy, self.pixel_radius)
 
 
