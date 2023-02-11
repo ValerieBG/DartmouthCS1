@@ -26,7 +26,7 @@ def binary_search(the_list, key, left=None, right=None):
         # Compute midpoint, the midpoint of this sublist, by averaging left and right.
         midpoint = (left + right) // 2
         # If key is equal to the item at index midpoint of the_list, then it has been found. Return this index.
-        if key == the_list[midpoint]:
+        if key == sublist[midpoint]:
             return midpoint
         # Otherwise, because the_list is sorted, you can tell whether key, if in the_list, is either in the sublist
         # before the midpoint or in the sublist after the midpoint.
@@ -34,14 +34,14 @@ def binary_search(the_list, key, left=None, right=None):
             # If key is less than the item at the midpoint and it's in the list, then it must be in the sublist before
             # the midpoint. Recursively return the result of calling binary_search on the sublist starting at index left
             # and going up to and including the index just before midpoint.
-            if key < the_list[midpoint]:
+            if key < sublist[midpoint]:
                 binary_search(sublist, key, left, midpoint)
             # Only one other possibility remains: key is greater than the item at the midpoint, and so if it's in the
             # list, then it must be in the sublist after the midpoint. Recursively return the result of calling
             # binary_search on the sublist starting at the index just after midpoint and going up to and including
             # index right.
             else:
-                binary_search(sublist, key, midpoint + 1, right + 1)
+                binary_search(sublist, key, midpoint + 1, right)
 
 
 # Driver code for binary search.
