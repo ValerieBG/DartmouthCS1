@@ -2,6 +2,7 @@
 # author:   Valerie Gadapati
 # date:     Feb 20, 2023
 # purpose:  create a system class to define interactions between celestial bodies
+
 from math import sqrt
 
 # constant used in acceleration calculations
@@ -13,8 +14,7 @@ class System:
     def __init__(self, list_bodies):
         self.bodies = list_bodies
 
-    # computes the accelerations on each body and then calls methods in Body to update the velocity and position
-    # of each body.
+    # update position, velocity and accelerations using computations as needed for each body in the system
     def update(self, timestep):
         # update the position of each body
         for bod in self.bodies:
@@ -36,19 +36,19 @@ class System:
         a_x = 0
         a_y = 0
 
-        # identify the given body
+        # identify the body to calculate acceleration for
         body1 = self.bodies[n]
 
         for i in range(0, len(self.bodies)):
-            if i != n:  # don't calculate hte gravity of itself
-                # identify the body you will calculate against
+            if i != n:  # don't calculate against the same body
+                # identify each body you will calculate against
                 body2 = self.bodies[i]
 
                 # raw component distances (x2 - x1 and y2 - y1)
                 dx = (body2.x - body1.x)
                 dy = (body2.y - body1.y)
 
-                # calculate non-linear distance between the objects
+                # calculate distance between the objects
                 dist = sqrt((dx * dx) + (dy * dy))  # pythagorean theorem
 
                 # calculate the acceleration using (gravity constant * mass1 * mass2) / dist^2
@@ -58,7 +58,7 @@ class System:
                 a_x_bod = (a * dx) / dist
                 a_y_bod = (a * dy) / dist
 
-                # continue adding the calculated components to the total x and y components, for each other body
+                # continue adding the components using other bodies to the total x and y components for the chosen body
                 a_x += a_x_bod
                 a_y += a_y_bod
 

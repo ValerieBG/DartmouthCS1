@@ -8,12 +8,21 @@ from cs1lib import *
 
 class Body:
     def __init__(self, mass, x, y, vx, vy, pixel_radius, r, g, b):
+        # mass of the body (in kg)
         self.mass = mass
+
+        # x and y locations (in m)
         self.x = x
         self.y = y
+
+        # (orbital) velocity in m/s
         self.vx = vx
         self.vy = vy
+
+        # radius of body in pixels
         self.pixel_radius = pixel_radius
+
+        # RGB color codes
         self.r = r
         self.g = g
         self.b = b
