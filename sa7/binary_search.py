@@ -20,7 +20,7 @@ def binary_search(the_list, key, left=None, right=None):
     # If the sublist of the_list starting at index left and going up to and including index right is empty—that is, it
     # contains no items, not even one item—then clearly, key cannot be in this sublist. Return None.
     sublist = the_list[left:right]
-    if not sublist:  # 'not list' is same as 'list == False', aka 'list == []', which is an empty list,
+    if not sublist or right < left:  # 'not list' is same as 'list == False', aka 'list == []', which is an empty list,
         return None
     else:
         # Compute midpoint, the midpoint of this sublist, by averaging left and right.
@@ -35,13 +35,13 @@ def binary_search(the_list, key, left=None, right=None):
             # the midpoint. Recursively return the result of calling binary_search on the sublist starting at index left
             # and going up to and including the index just before midpoint.
             if key < the_list[midpoint]:
-                binary_search(the_list, key, left, midpoint-1)
+                return binary_search(the_list, key, left, midpoint-1)
             # Only one other possibility remains: key is greater than the item at the midpoint, and so if it's in the
             # list, then it must be in the sublist after the midpoint. Recursively return the result of calling
             # binary_search on the sublist starting at the index just after midpoint and going up to and including
             # index right.
             else:
-                binary_search(the_list, key, midpoint, right)
+                return binary_search(the_list, key, midpoint+1, right)
 
 
 # Driver code for binary search.
