@@ -40,7 +40,7 @@ class System:
         body1 = self.bodies[n]
 
         for i in range(0, len(self.bodies)):
-            if i != n:  # don't calculate against the same body
+            if i != n:  # don't calculate body against itself
                 # identify each body you will calculate against
                 body2 = self.bodies[i]
 
