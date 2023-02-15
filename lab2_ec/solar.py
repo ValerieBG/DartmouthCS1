@@ -33,12 +33,12 @@ def main():
 
 # source: https://nssdc.gsfc.nasa.gov/planetary/factsheet/, converted units as needed
 # sun has no velocity because it is the center of the system
-sun = Body(1.98892e30, 0, 0, 0, 0, "sun.jpg")
+sun = Body(1.98892e30, 0, 0, 0, 0, "pics/sun.jpg")
 # the first four planets
-mercury = Body(0.330e24, 0, 57.9e9, 47400, 0, "mercury.jpg")
-venus = Body(4.87e24, 0, 108.2e9, 35000, 0, "venus.jpg")
-earth = Body(5.9736e24, 0, 149.6e9, 29800, 0, "earth.jpg")
-mars = Body(0.642e24, 0, 228.0e9, 24100, 0, "mars.jpg")
+mercury = Body(0.330e24, 0, 57.9e9, 47400, 0, "pics/mercury.jpg")
+venus = Body(4.87e24, 0, 108.2e9, 35000, 0, "pics/venus.jpg")
+earth = Body(5.9736e24, 0, 149.6e9, 29800, 0, "pics/earth.jpg")
+mars = Body(0.642e24, 0, 228.0e9, 24100, 0, "pics/mars.jpg")
 
 
 solar_sys = System([sun, mercury, venus, earth, mars])
