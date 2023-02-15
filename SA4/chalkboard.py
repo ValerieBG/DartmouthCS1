@@ -50,7 +50,6 @@ def release(mx, my):
     global draw
     draw = False  # when the mouse is released, no more drawing should be occurring
 
-
 def move(mx, my):
     global curr_x, curr_y
     curr_x = mx  # as the mouse moves, set its new value to be used to draw a line

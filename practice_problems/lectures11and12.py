@@ -117,16 +117,33 @@ print("--------------")
 # If gl1 = [ ] and gl2 = [11, 20, 44] then the result list will be [11, 20, 44]
 def func8(gl1, gl2):
     new_list = []
-    for i in gl1:
-        for j in gl2:
-            if i not in new_list:
-                new_list.append(i)
-            if j not in new_list:
-                new_list.append(j)
+    if len(gl2) > len(gl1):
+        longer = gl2
+        shorter = gl1
+    else:
+        longer = gl1
+        shorter = gl2
+
+    i = 0
+    while i < len(shorter):
+        if longer[i] < shorter[i]:
+            new_list.append(longer[i])
+            new_list.append(shorter[i])
+        elif shorter[i] < longer[i]:
+            new_list.append(shorter[i])
+            new_list.append(longer[i])
+        elif shorter[i] == longer[i]:
+            new_list.append(shorter[i])
+
+        if i == len(shorter):
+            new_list.append(longer[len(shorter):])
+        i += 1
 
     return new_list
+
 list1 = [10, 20, 30, 40]
 list2 = [11, 20, 44, 56, 60]
+print("----------------------")
 print(func8(list1, list2)) # STILL NOT WORKING COMPLETELY - NOT IN INCREASING ORDER
 
 # 4. Define a function that takes two strings gs1 and gs2 as parameters and returns True if the alphabet “a” appears
@@ -168,6 +185,7 @@ def func10(glist):
 
     return glist # STILL NOT WORkING COMPLETELY
 
+print("----------------------")
 my_list = [10, 5, -7, 34, 28, 107, -2, 6]
 
 print(func10(my_list))
