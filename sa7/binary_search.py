@@ -17,26 +17,28 @@ def binary_search(the_list, key, left=None, right=None):
         right = len(the_list) - 1
 
     # YOU FILL IN THE REST OF THIS FUNCTION.
+
+    # Compute midpoint of sublist by averaging left and right
+    midpoint = (left + right) // 2
+    print("midpoint is index", midpoint, " value is", the_list[midpoint])
+    print("right index:", right, "; left index:", left)
+
     # If sublist from index left to index right (inclusive) is empty, key will not be there so return None
     sublist = the_list[left:right]
     if not sublist or right < left:  # 'not list' is same as 'list == False', aka 'list == []', which is an empty list
         return None
+    # If key is found in the item at index midpoint of the_list, return midpoint index
+    if key == the_list[midpoint]:
+        return midpoint
+    # Note: the_list is sorted in increasing order
+    # if key is in the first half of the sublist, search there using recursion
+    if key < the_list[midpoint]:
+        # starting at index left and going up to and including the index just before midpoint
+        return binary_search(the_list, key, left, midpoint)
+    # otherwise search the second half of the list using recursion
     else:
-        # Compute midpoint of sublist by averaging left and right
-        midpoint = (left + right) // 2
-        # If key is found in the item at index midpoint of the_list, return midpoint index
-        if key == the_list[midpoint]:
-            return midpoint
-        # Note: the_list is sorted in increasing order
-        else:
-            # if key is in the first half of the sublist, search there using recursion
-            if key < the_list[midpoint]:
-                # starting at index left and going up to and including the index just before midpoint
-                return binary_search(the_list, key, left, midpoint)
-            # otherwise search the second half of the list using recursion
-            else:
-                # starting at the index just after midpoint and going up to and including index right
-                return binary_search(the_list, key, midpoint+1, right+1)
+        # starting at the index just after midpoint and going up to and including index right
+        return binary_search(the_list, key, midpoint+1, right+1)
 
 
 # Driver code for binary search.

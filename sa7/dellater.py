@@ -8,15 +8,9 @@ print(my_list[left:midpoint])
 print(my_list[midpoint + 1: right + 1])
 print(int((right+left)/2) == (right + left) // 2)
 
+
+
 # starting at index left and going up to and including the index just before midpoint
 # left, midpoint-1
 # starting at the index just after midpoint and going up to and including index right
 # midpoint+1, right
-
-print("------------")
-list2 = [7]
-left = 0
-right = len(my_list) - 1
-midpoint = (right + left) // 2
-# print("midpoint is index ", midpoint, "  ;  value is ", list2[midpoint])
-print((0+0)//2)
