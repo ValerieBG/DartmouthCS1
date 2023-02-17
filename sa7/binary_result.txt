@@ -1,0 +1,28 @@
+/opt/homebrew/opt/python3/bin/python3 /Users/valerie/PycharmProjects/23W_CS1/sa7/binary_search.py
+How many items in the list? 9
+The list: [1, 347, 403, 427, 555, 604, 659, 806, 983]
+What value to search for? ('?' to see the list, 'q' to quit): 0
+0 not found
+What value to search for? ('?' to see the list, 'q' to quit): 1
+1 found at index 0
+What value to search for? ('?' to see the list, 'q' to quit): 347
+347 found at index 1
+What value to search for? ('?' to see the list, 'q' to quit): 450
+450 not found
+What value to search for? ('?' to see the list, 'q' to quit): 427
+427 found at index 3
+What value to search for? ('?' to see the list, 'q' to quit): 600
+600 not found
+What value to search for? ('?' to see the list, 'q' to quit): 659
+659 found at index 6
+What value to search for? ('?' to see the list, 'q' to quit): 806
+806 found at index 7
+What value to search for? ('?' to see the list, 'q' to quit): 983
+983 found at index 8
+What value to search for? ('?' to see the list, 'q' to quit): 900
+900 not found
+What value to search for? ('?' to see the list, 'q' to quit): 1420
+1420 not found
+What value to search for? ('?' to see the list, 'q' to quit): q
+
+Process finished with exit code 0
