@@ -1,5 +1,7 @@
-## DOCUMENTATION
-
+# filename: city.py
+# author:   Valerie Gadapati
+# date:     Mar 1, 2023
+# purpose:  parse information for a city
 class City:
     def __init__(self, country_code, name, region, population, latitude, longitude):
         # The city's country code, which is a two-letter string.
