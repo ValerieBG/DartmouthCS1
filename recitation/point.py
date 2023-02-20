@@ -2,6 +2,8 @@
 #Date: 02/12/2023
 #Purpose: Point class definition
 
+# for use in feb13 recitation
+
 class Point:
     def __init__(self, gx, gy):
         self.x = gx
