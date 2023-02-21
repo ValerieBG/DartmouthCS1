@@ -10,9 +10,14 @@ from random import *
 
 WINDOW_X = 720
 WINDOW_Y = 360
+FRAME_RATE = 4
 
 CX = WINDOW_X // 2
 CY = WINDOW_Y // 2
+
+curr_frame = 0
+max_frames = 50
+
 
 def place_map():
     clear()
@@ -21,16 +26,17 @@ def place_map():
     draw_image(img, 0, 0)
 
 
-def place_dots():
+def map_visual():
+    global curr_frame, max_frames
+    place_map()
+
     disable_stroke()
-    for i in range(0, 50):
+    for i in range(curr_frame):
         set_fill_color(random(), random(), random(), 1)
         world_cities[i].draw(CX, CY)
 
-
-def map_visual():
-    place_map()
-    place_dots()
+    if curr_frame < max_frames:
+        curr_frame += 1
 
 
-start_graphics(map_visual, width=WINDOW_X, height=WINDOW_Y, framerate=5)
+start_graphics(map_visual, width=WINDOW_X, height=WINDOW_Y, framerate=FRAME_RATE)
