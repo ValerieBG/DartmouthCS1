@@ -5,10 +5,14 @@
 
 from city import *
 from cs1lib import *
+from read_cities import world_cities
+from random import *
 
-WINDOW_Y = 500
-WINDOW_X = 700
+WINDOW_X = 720
+WINDOW_Y = 360
 
+CX = WINDOW_X // 2
+CY = WINDOW_Y // 2
 
 def place_map():
     clear()
@@ -17,13 +21,16 @@ def place_map():
     draw_image(img, 0, 0)
 
 
-def draw(self, cx, cy):
-    # scale self.lat and self.long to the size of the image,
-
-    # let's say px and py are the scaled values
-
-    # call draw_circle(px, py, RAD) to draw that city in its
-    # real-life location on the map
+def place_dots():
+    disable_stroke()
+    for i in range(0, 50):
+        set_fill_color(random(), random(), random(), 1)
+        world_cities[i].draw(CX, CY)
 
 
-start_graphics(place_map, width=720, height=360)
+def map_visual():
+    place_map()
+    place_dots()
+
+
+start_graphics(map_visual, width=WINDOW_X, height=WINDOW_Y, framerate=5)
