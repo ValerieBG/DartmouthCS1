@@ -5,6 +5,7 @@
 
 from cs1lib import *
 
+# radius of dot for drawing a city location
 RAD = 3
 
 
@@ -20,17 +21,16 @@ class City:
         self.pop = population
         # The city's latitude, which is a float.
         self.lat = latitude
-        # The city's longitude, which is also a float.
+        # The city's longitude, which is a float.
         self.long = longitude
 
     def __str__(self):
-        # a string consisting of the city's name, population, latitude, and longitude,
-        # separated by commas and with no spaces around the commas.
+        # the city's name, population, latitude, and longitude, separated by commas (with no spaces)
         return self.name + "," + str(self.pop) + "," + str(self.lat) + "," + str(self.long)
 
     def draw(self, cx, cy):
-        # scale self.lat and self.long to the size of the image,
-        # let's say px and py are the scaled values
+        # scale latitude and longitude to pixels for the image
+        # given that cx and cy represent the center, and lat/long can be pos or neg
         if self.lat < 0:
             py = cy + (abs(self.lat)) * 2
         else:
@@ -41,6 +41,5 @@ class City:
         else:
             px = cx + (abs(self.long)) * 2
 
-        # call draw_circle(px, py, RAD) to draw that city in its
-        # real-life location on the map
+        # draw the city at its location on the map
         draw_circle(px, py, RAD)
