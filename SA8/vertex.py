@@ -4,8 +4,10 @@
 # purpose:  define a class Vertex that describes connected vertices and data
 
 class Vertex:
-    def __init__(self):
-
+    def __init__(self, name, adj_vertices, text):
+        self.name = name
+        self.adj_vertices = adj_vertices
+        self.text = text
 
 # A Vertex contains reference to a Python list of strings describing the connected vertices, and some data. For the
 # example vertex, the adjacency list would be ["LESS_TRAVELED", "BRIDGE"], and the data would be "You are walking...more-traveled?"
