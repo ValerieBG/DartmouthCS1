@@ -52,10 +52,11 @@ def func4(x, n):
 
 print(func4(2, 5))
 
-# 5. The following code was supposed to return the index of the first occurrence of letter “a” in the given string. But there is a mistake in the code. Can you correct it?
+# 5. The following code was supposed to return the index of the first occurrence of letter “a” in the given string.
+# But there is a mistake in the code. Can you correct it?
 
 def func5(s, i = 0):
-   if len(s) == 0:
+   if len(s) == i:
        return None
 
    if s[i] == "a":
@@ -63,10 +64,13 @@ def func5(s, i = 0):
 
    return func5(s, i+1)
 
-print(func6("tester"))
+print(func5("tester"))
 
-# 1. Define a recursive function that takes a list of integers as a parameter and returns True if the list is sorted in increasing order; otherwise it returns False.
-#
+# 1. Define a recursive function that takes a list of integers as a parameter and returns True if the list is sorted
+# in increasing order; otherwise it returns False.
+def fun1(l):
+
+
 # 2. Define a recursive function that takes two strings s1 and s2 as parameters and checks if s2 is a prefix of s1. For example: s2 = “test” and s = “testing” then s1 is a prefix of s2.
 #
 # 3. Define a recursive function that takes two strings s1 and s2 as parameters and checks if s2 is a substring of s1.

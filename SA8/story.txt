@@ -1,5 +1,16 @@
-START| LESS_TRAVELED, BRIDGE| You are walking through the woods on a snowy evening.  You come to a fork in the road.  Do you a) take the road less-traveled or b) take the road more-traveled?
-LESS_TRAVELED|| You are eaten by a bear.  The end.
-BRIDGE| SLIPPED, EATEN_BY_TROLL| You walk along the road for a while.  As you come to a bridge, a troll jumps out and demands a gold coin as a toll.  Do you a) pay the troll's toll or b) refuse to pay?
-SLIPPED|| The troll happily wanders off with his gold coin, but as you step onto the bridge, your foot slips on the wet wood.  You fall off of the bridge and into the icy water.  The end.
-EATEN_BY_TROLL|| The troll eats you.  The end.
+START| RED_POTION, BLUE_POTION| You're lost in a dense and dark forest when you come upon a mysterious clearing with a small wooden table. There are two drinks on top of it, with a note addressed to you to drink one to return home. Do you drink the a) glittering red liquid in a stout glass jar or b) the deep blue liquid in a long glass tube?
+RED_POTION| BEFRIEND, FIGHT, HIDE| You shrink down to the size of an ant and a towering figure dressed as royalty approaches you, smiling menacingly. Do you a) attempt to befriend them, b) threaten to fight them, or c) run to hide under a sizeable leaf?
+BEFRIEND|| The queen accepts your offer and leads you home. You are permanently tiny though. The end.
+FIGHT | WIN, LOSE| The queen laughs in your face, but insists on a fair fight. Do you choose to fight with a) a large stick on the ground or b) steal her scepter off her?
+WIN|| The element of surprise is in your favor! She surrenders, and hands you a map, along with the blue potion, which returns you to normal size and you return home. The end.
+LOSE|| Silly tiny human! She zaps you, turning you into an actual ant. The end.
+HIDE|| You successfully hide away, and they leave, annoyed, but accidentally drop a map that allows you to find home again. The end.
+BLUE_POTION| CHESHIRE, HATTER| You stretch, suddenly as tall as the surrounding trees, but still can't see a way out. You spot two treehouses. Do you approach the one with the a) yellow door or b) the purple door?
+CHESHIRE| ESCAPE, FOLLOW| You are greeted by a friendly anthropomorphic cat who offers to take you to the exit himself. Do you a) agree to follow him or b) go your own way
+FOLLOW|| You follow the cat and, after many days and nights, he finds you the edge of the forest, but you are stuck as a giant. The end.
+ESCAPE|| You go your own way but end up trapped, endlessly wandering the forest, despite your eagle's eye view. The end.
+HATTER| HIDE, DRINK, EAT| A eccentric looking man greets you, and insists on joining him for afternoon tea before he helps you. Do you a) hide away in his porch, pretending to be sick, b) take up his offer of tea, or c) grab a shortbread cookie?
+EAT|| The cookie tastes weird... when you wake, you are at the edge of the forest, but still not human sized. The end.
+DRINK| GREEN, GREY| He grabs a tea kettle, and you are wary of his ability to help you. When he offers you two cups, do you take the a) fragrant and bitter green tea or b) the fruity and bright strawberry tea?
+GREEN|| The green tea turns your skin green, but he assures you it will fade. He leads you to the edge of the forest, but you can't tell if you're any less green. The end.
+PINK|| You feel sharp and awake after the tea, keeping up with the man as he takes you to the edge of the forest. You agree to keep in touch with your new friend. The end.

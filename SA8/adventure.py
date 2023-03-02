@@ -36,9 +36,9 @@ def load_story(filename):
         if len(l.split("|")) == 3:
             vertex_name, adjacent_vertices, text = parse_line(l)
 
-            print("vertex " + vertex_name)
-            print(" adjacent:  " + str(adjacent_vertices))
-            print(" text:  " + text)
+            #print("vertex " + vertex_name)
+            #print(" adjacent:  " + str(adjacent_vertices))
+            #print(" text:  " + text)
 
         # YOU WRITE THIS PART
         # create a graph vertex here and add it to the dictionary
@@ -48,20 +48,29 @@ def load_story(filename):
 
     return vertex_dict
 
-# Finally, write a function containing a while loop that allows you to play the game. Grab the vertex "START" from the
-# dictionary, get the list of choices, and allow the user to input a value like a, b, or c using the Python input
-# function, which you may look up online. (If you are using Python 2, you should use the function raw_input instead.)
-# Based on that choice (remember you can convert a char to a number using ord), grab the next vertex from the
-# dictionary, and repeat until you reach a vertex with no outgoing links.
+
+# function to play the choose-your-own-adventure game
 def play_game(dict):
-    alive = True
+    active = True
     curr_vertex = dict["START"]
 
-    while alive:
+    while active:
         print(curr_vertex.text)
+        # if there is a possible choice continue the story
+        if len(curr_vertex.adj_vertices) > 0:
+            # turn the letter typed into a corresponding index
+            user_choice = ord(input("Type your choice: ")) - ord("a")
+            # if the user enters an option not presented, prompt them again
+            while user_choice > len(curr_vertex.adj_vertices) - 1:
+                print("Not an option! Try again...")
+                user_choice = ord(input("Type your choice: ")) - ord("a")
+            curr_vertex = dict[curr_vertex.adj_vertices[user_choice]]
+        # if reached an end of story, aka a node w no adjacent vertices, exit the game
+        else:
+            active = False
 
 
-
-# Your code for adventure.py should call the function to start game play after loading the story data into the graph.
+# load the story data into the graph
 story_dict = load_story("story.txt")
+# call the function to start game play
 play_game(story_dict)
