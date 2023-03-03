@@ -3,6 +3,11 @@
 # date:     Mar 7, 2023
 # purpose:  define a class Vertex that describes connected vertices and data
 
+from cs1lib import *
+
+NODE_RADIUS = 10
+EDGE_WIDTH = 5
+
 class Vertex:
     def __init__(self, name, adj_verts, x, y):
         self.name = name
@@ -24,3 +29,24 @@ class Vertex:
 
         # returns a string in the format of Vertex Name; Location: X, Y; Adjacent vertices: Adj1, Adj2, ... , Adjx
         return self.name + "; " + "Location: " + str(self.x) + ", " + str(self.y) + "; " + "Adjacent vertices: " + adj
+
+
+# draw a node as a circle in a given color
+def draw_node(self, r, g, b):
+    set_fill_color(r, b, g, 1)
+    set_stroke_color(1, 1, 1, 1)
+
+    draw_circle(self.x, self.y, NODE_RADIUS)
+
+
+# draw an edge between two nodes as a straight line in a given color
+def draw_edge(self, next, r, g, b):
+    set_stroke_color(r, g, b, 1)
+    draw_line(self.x, self.y, next.x, next.y)
+
+
+# visualize all the adjacent edges in a given color
+def draw_all_adj(self, r, g, b):
+    set_stroke_color(r, g, b)
+    for node in self.adj_verts:
+        draw_line(self.x, self.y, node.x, node.y)
