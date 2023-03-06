@@ -21,19 +21,25 @@ def load_graph(filename):
         # identify the name of the vertex
         name = split_params[0].strip()
 
-        # create a list of the adjacent parameters
-        adj_verts = split_params[1].strip().split(",")  # returns a list
-        adj = []
-        for x in adj_verts:
-            adj.append(x.strip())
-
         # identify the x and y coordinates
         coords = split_params[2].strip().split(",")
         x = coords[0].strip()
         y = coords[1].strip()
 
         # add the new vertex to a dictionary using appropriate parameters
-        vertex_dict[name] = Vertex(str(name), adj, int(x), int(y))
+        vertex_dict[name] = Vertex(str(name), int(x), int(y))
+        # print(vertex_dict[name])  # for testing
+    data.close()
+
+    data = open(filename, "r")
+    for line in data:
+        # first split by ; into three categories
+        split_params = line.split(";")
+        # identify the name of the vertex
+        name = split_params[0].strip()
+        adj_verts = split_params[1].strip().split(",")  # returns a list
+        for x in adj_verts:
+            vertex_dict[name].adj_verts.append(vertex_dict[x.strip()])
         # print(vertex_dict[name])  # for testing
 
     data.close()
