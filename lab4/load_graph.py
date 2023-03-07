@@ -31,6 +31,7 @@ def load_graph(filename):
         # print(vertex_dict[name])  # for testing
     data.close()
 
+    # second round of analysis to grab adjacent vertices as objects
     data = open(filename, "r")
     for line in data:
         # first split by ; into three categories

@@ -50,7 +50,6 @@ class Vertex:
         for node in self.adj_verts:
             self.draw_edge(node, r, g, b)
 
-
     # return whether a given coordinate is within the visual space of a node
     def in_node(self, x, y):
         if (self.x - NODE_RADIUS <= x <= self.x + NODE_RADIUS) and (self.y - NODE_RADIUS <= y <= self.y + NODE_RADIUS):
