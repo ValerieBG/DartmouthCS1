@@ -68,8 +68,6 @@ print(func5("tester"))
 
 # 1. Define a recursive function that takes a list of integers as a parameter and returns True if the list is sorted
 # in increasing order; otherwise it returns False.
-def fun1(l):
-
 
 # 2. Define a recursive function that takes two strings s1 and s2 as parameters and checks if s2 is a prefix of s1. For example: s2 = “test” and s = “testing” then s1 is a prefix of s2.
 #
